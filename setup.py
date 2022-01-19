@@ -21,6 +21,13 @@ ext_modules = [
         define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
         include_dirs=[numpy.get_include()],
     ),
+    Extension(
+        name="mview",
+        sources=["mview.pyx"],
+        language="c",
+        define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+        include_dirs=[numpy.get_include()],
+    ),
 ]
 for ext_module in ext_modules:
     ext_module.cython_directives = dict(language_level="3")
